@@ -1,0 +1,19 @@
+linters:
+  enable-all: true
+  disable:
+    - mnd
+    - gomnd
+    - err113
+    - nlreturn
+    - depguard
+    - errcheck
+    - varnamelen
+    - exhaustruct
+    - forcetypeassert
+
+linters-settings:
+  gci:
+    sections:
+      - standard
+      - default
+      - prefix(github.com/devem-tech/socks)
