@@ -11,11 +11,13 @@ import (
 	"sync"
 	"sync/atomic"
 	"time"
+
+	"github.com/valyala/fasthttp"
 )
 
 const (
 	connectionTimeout = 10 * time.Second // Connection timeout for target connections
-	idleTimeout       = 60 * time.Second // Idle timeout for connections
+	idleTimeout       = 2 * time.Minute  // Idle timeout for connections
 )
 
 const socksVersion = 5 // SOCKS protocol version
@@ -209,7 +211,7 @@ func (s *Server) handle(client net.Conn) {
 	t := s.metrics.Timer(mTargetDialDuration)
 
 	// Connect to the target address
-	target, err := net.DialTimeout(s.network, dest, connectionTimeout)
+	target, err := fasthttp.DialTimeout(dest, connectionTimeout)
 	if err != nil {
 		s.reply(client, connectionRefused, mErrorsConnectionRefused, "Failed to connect to target", err)
 		return
