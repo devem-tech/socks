@@ -2,7 +2,6 @@ linters:
   enable-all: true
   disable:
     - mnd
-    - gomnd
     - err113
     - nlreturn
     - depguard

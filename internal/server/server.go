@@ -17,7 +17,7 @@ import (
 
 const (
 	connectionTimeout = 10 * time.Second // Connection timeout for target connections
-	idleTimeout       = 2 * time.Minute  // Idle timeout for connections
+	idleTimeout       = 10 * time.Minute // Idle timeout for connections
 )
 
 const socksVersion = 5 // SOCKS protocol version

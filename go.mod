@@ -3,8 +3,8 @@ module github.com/devem-tech/socks
 go 1.23
 
 require (
-	github.com/devem-tech/statsd v0.1.0
-	github.com/valyala/fasthttp v1.57.0
+	github.com/devem-tech/statsd v1.0.0
+	github.com/valyala/fasthttp v1.58.0
 )
 
 require (
