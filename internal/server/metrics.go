@@ -5,6 +5,7 @@ const (
 	mConnectionDuration      = "connections.duration"
 	mTargetDialDuration      = "connections.target_dial_duration"
 	mErrorsAccept            = "errors.accept"
+	mErrorsUnauthorizedIP    = "errors.unauthorized_ip"
 	mErrorsGreeting          = "errors.greeting"
 	mErrorsVersion           = "errors.unsupported_version"
 	mErrorsAuthMethods       = "errors.auth_methods"

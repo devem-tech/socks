@@ -16,4 +16,6 @@ WORKDIR /opt
 
 COPY --from=builder /opt/bin/entrypoint .
 
+EXPOSE 7010
+
 CMD ["./entrypoint"]

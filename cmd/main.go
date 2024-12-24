@@ -1,6 +1,7 @@
 package main
 
 import (
+	"os"
 	"time"
 
 	"github.com/devem-tech/statsd"
@@ -13,7 +14,9 @@ const dnsCacheTTL = 10 * time.Minute
 
 func main() {
 	// Create a StatsD client
-	metrics, err := statsd.New()
+	metrics, err := statsd.New(
+		statsd.Host(os.Getenv("METRICS_HOST")),
+	)
 	if err != nil {
 		panic(err)
 	}

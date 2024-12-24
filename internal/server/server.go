@@ -6,6 +6,7 @@ import (
 	"io"
 	"log"
 	"net"
+	"os"
 	"strconv"
 	"strings"
 	"sync"
@@ -88,6 +89,8 @@ func (s *Server) Serve() {
 
 	log.Printf("Server is running on port %s...", s.address)
 
+	allowedIP := os.Getenv("ALLOWED_IP")
+
 	for {
 		conn, err := listener.Accept()
 		if err != nil {
@@ -95,6 +98,15 @@ func (s *Server) Serve() {
 			s.metrics.Increment(mErrorsAccept)
 
 			continue
+		}
+
+		if allowedIP != "" {
+			if tcpAddr, ok := conn.RemoteAddr().(*net.TCPAddr); ok && allowedIP != tcpAddr.IP.String() {
+				log.Printf("Connection from %s is not allowed", conn.RemoteAddr().String())
+				s.metrics.Increment(mErrorsUnauthorizedIP)
+
+				continue
+			}
 		}
 
 		go func() {
