@@ -16,6 +16,7 @@ func main() {
 	// Create a StatsD client
 	metrics, err := statsd.New(
 		statsd.Host(os.Getenv("METRICS_HOST")),
+		statsd.Prefix(os.Getenv("METRICS_PREFIX")),
 	)
 	if err != nil {
 		panic(err)
