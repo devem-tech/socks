@@ -1,5 +1,18 @@
 const domains = [
-  "myexternalip.com",
+  "youtube.com",
+  "googlevideo.com",
+  "googleapis.com",
+  "gstatic.com",
+  "chatgpt.com",
+  "browser-intake-datadoghq.com",
+  "proton.me",
+  "facebook.com",
+  "fbcdn.net",
+  "instagram.com",
+  "redis.io",
+  "x.com",
+  "twimg.com",
+  // "myexternalip.com",
 ]
 
 function FindProxyForURL(url, host) {

@@ -1,6 +1,6 @@
 module github.com/devem-tech/socks
 
-go 1.23
+go 1.24
 
 require (
 	github.com/devem-tech/statsd v1.0.0
