@@ -1,6 +1,6 @@
 # SOCKS5 Proxy Server
 
-[![Go Version](https://img.shields.io/github/go-mod/go-version/devem-tech/socks)](https://golang.org/doc/go1.17)
+[![Go Version](https://img.shields.io/github/go-mod/go-version/devem-tech/socks)](https://go.dev/doc)
 [![License](https://img.shields.io/github/license/devem-tech/socks)](LICENSE)
 
 A high-performance, SOCKS5 proxy server written in Go. This server is designed for secure, low-latency data forwarding between clients and remote hosts, with robust error handling, connection monitoring, and customizable metrics tracking.
