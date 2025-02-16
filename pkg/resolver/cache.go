@@ -2,6 +2,7 @@ package resolver
 
 import (
 	"fmt"
+	"log"
 	"net"
 	"sync"
 	"time"
@@ -38,6 +39,8 @@ func New(m metrics, ttl time.Duration) *Cache {
 // Resolve performs DNS resolution for a given host and caches the result with TTL.
 // If a valid cached entry exists, it returns the cached IP address without performing DNS lookup.
 func (c *Cache) Resolve(host string) (net.IP, error) {
+	log.Printf("dns: resolve: %s", host) // @fixme
+
 	defer c.m.Timer(mResolve)()
 
 	// Check the cache without locking
