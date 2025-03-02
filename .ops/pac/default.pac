@@ -1,8 +1,13 @@
 const domains = [
   "youtube.com",
+  "youtu.be",
   "googlevideo.com",
+  "ytimg.com",
   "googleapis.com",
   "gstatic.com",
+  "doubleclick.net",
+  "ggpht.com",
+  "withgoogle.com",
   "chatgpt.com",
   "browser-intake-datadoghq.com",
   "proton.me",
@@ -12,7 +17,7 @@ const domains = [
   "redis.io",
   "x.com",
   "twimg.com",
-  // "myexternalip.com",
+  "medium.com",
 ]
 
 function FindProxyForURL(url, host) {
